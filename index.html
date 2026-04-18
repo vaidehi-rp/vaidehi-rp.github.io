@@ -5,196 +5,468 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio website for Vaidehi - projects, skills, and contact information."
+      content="Vaidehi Patel portfolio - AI product, workflow automation, and applied AI systems."
     />
-    <title>Vaidehi | Portfolio</title>
+    <title>Vaidehi Patel | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" id="top">
-      <div class="container nav-wrapper">
-        <a class="brand" href="#top">Vaidehi</a>
+      <div class="container nav-shell">
+        <a href="#top" class="logo">VP</a>
         <button
           class="nav-toggle"
+          id="navToggle"
           aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Toggle navigation"
+          aria-controls="siteNav"
+          aria-label="Open navigation"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <nav id="site-nav" class="site-nav">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-          <button class="theme-button" id="themeButton" aria-label="Toggle theme">
-            <span id="themeIcon">🌙</span>
-          </button>
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+          <a href="#work" data-nav-link>Work</a>
+          <a href="#projects" data-nav-link>Projects</a>
+          <a href="#process" data-nav-link>Process</a>
+          <a href="#about" data-nav-link>About</a>
+          <a href="#contact" data-nav-link>Contact</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <section class="hero">
-        <div class="container hero-content">
-          <p class="eyebrow">Software Developer</p>
-          <h1>
-            Building polished web experiences that are fast, accessible, and
-            useful.
-          </h1>
-          <p class="hero-text">
-            Hi, I'm Vaidehi. I enjoy turning ideas into production-ready apps,
-            collaborating with teams, and continuously learning modern web
-            technologies.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projects">View Projects</a>
-            <a class="button button-secondary" href="#contact">Get In Touch</a>
+      <section class="hero section" aria-label="Introduction">
+        <div class="container hero-grid">
+          <div class="hero-copy fade-in">
+            <p class="mono-label accent">
+              AI Product · Johns Hopkins MEM · CS
+            </p>
+            <h1 class="hero-title">
+              Vaidehi
+              <br />
+              Patel<span class="accent">.</span>
+            </h1>
+            <p class="lead">
+              I take messy, undefined problems and build AI systems around them
+              — the kind that go from experiment to something teams rely on
+              every day.
+            </p>
+            <div class="button-row">
+              <a href="#work" class="button button-solid">See the work</a>
+              <a href="#contact" class="button button-ghost">Contact me</a>
+            </div>
           </div>
-          <div class="social-links">
-            <a href="https://github.com/vaidehi-rp" target="_blank" rel="noreferrer"
-              >GitHub</a
-            >
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"
-              >LinkedIn</a
-            >
-            <a href="mailto:hello@example.com">Email</a>
+
+          <div class="hero-stats fade-in stagger">
+            <article class="stat-card">
+              <p class="stat-number">40%</p>
+              <p class="stat-label">manual work reduced at Trax</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-number">3.82</p>
+              <p class="stat-label">GPA · Johns Hopkins</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-number">40%</p>
+              <p class="stat-label">user engagement lift · Mood Mate</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-number">~1 yr</p>
+              <p class="stat-label">AI analytics · Weber Shandwick</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="about" class="section">
+      <div class="marquee-band" aria-label="Skills ticker">
+        <div class="marquee-track">
+          <span>
+            AI Workflow Design ✦ Prompt Engineering ✦ Product Management ✦ LLMs +
+            RAG ✦ SQL + Analytics ✦ Agile Execution ✦ AI Agents ✦ Systems
+            Thinking
+          </span>
+          <span aria-hidden="true">
+            AI Workflow Design ✦ Prompt Engineering ✦ Product Management ✦ LLMs +
+            RAG ✦ SQL + Analytics ✦ Agile Execution ✦ AI Agents ✦ Systems
+            Thinking
+          </span>
+        </div>
+      </div>
+
+      <section id="work" class="section">
         <div class="container">
-          <h2>About Me</h2>
+          <header class="section-head fade-in">
+            <p class="mono-label">— Experience</p>
+            <h2>Where I've <em>built.</em></h2>
+          </header>
+
+          <article class="education-strip fade-in">
+            <div>
+              <p class="mono-label">MASTER'S IN ENGINEERING MANAGEMENT</p>
+              <h3>Johns Hopkins University</h3>
+            </div>
+            <div class="education-gpa">
+              <p class="gpa-value">3.82</p>
+              <p class="mono-label">GPA</p>
+            </div>
+          </article>
+
+          <div class="experience-grid">
+            <article class="work-card fade-in">
+              <p class="mono-label accent">AI &amp; ANALYTICS INTERN</p>
+              <h3>Weber Shandwick</h3>
+              <p class="meta">~1 Year · Co-op + Part-time Internship</p>
+              <p>
+                First person hired into a newly created AI analytics role — no
+                playbook, no precedent. Became the go-to across analytics and
+                strategy teams for anything AI: extracting insights from
+                unstructured data, building automation workflows, evaluating
+                tools, designing agent-like systems. The job was less about
+                tasks and more about figuring out what was worth building in the
+                first place.
+              </p>
+              <ul class="tag-list">
+                <li>AI Agents</li>
+                <li>Workflow Design</li>
+                <li>Prompt Engineering</li>
+                <li>Cross-functional</li>
+                <li>Unstructured Data</li>
+              </ul>
+            </article>
+
+            <article class="work-card fade-in metric-card">
+              <p class="mono-label accent">PRODUCT STRATEGY CONSULTANT</p>
+              <h3>Trax Retail</h3>
+              <p class="meta">AI Workforce Automation</p>
+              <p>
+                Worked on an AI-powered task allocation system for gig workforce
+                management. Redesigned the workflow logic to cut manual
+                intervention and response time. Defined and prioritized features
+                using KPI analysis, built Tableau dashboards to track post-launch
+                performance, and kept the system stable through rollout.
+              </p>
+              <ul class="tag-list">
+                <li>AI Automation</li>
+                <li>KPI Analysis</li>
+                <li>Tableau</li>
+                <li>Ops Efficiency</li>
+                <li>Feature Prioritization</li>
+              </ul>
+              <p class="ghost-metric">40%<span>less manual work</span></p>
+            </article>
+
+            <article class="work-card fade-in metric-card">
+              <p class="mono-label accent">PRODUCT MANAGEMENT INTERN</p>
+              <h3>Kahana</h3>
+              <p class="meta">Product Discovery &amp; Execution</p>
+              <p>
+                Led discovery through user research, funnel analysis, and
+                usability testing — surfaced 12 growth opportunities. Owned the
+                Agile execution layer: user stories, acceptance criteria, backlog
+                refinement, sprint planning. Focused on turning research into
+                requirements engineering could actually act on.
+              </p>
+              <ul class="tag-list">
+                <li>Product Discovery</li>
+                <li>Agile / Scrum</li>
+                <li>User Research</li>
+                <li>Funnel Analysis</li>
+                <li>Requirements</li>
+              </ul>
+              <p class="ghost-metric">25%<span>sprint efficiency gain</span></p>
+            </article>
+
+            <article class="work-card fade-in">
+              <p class="mono-label accent">SOFTWARE ENGINEERING INTERN</p>
+              <h3>Carl Zeiss</h3>
+              <p class="meta">ML Application &amp; Enterprise Systems</p>
+              <p>
+                Built an ML-driven application in a large enterprise environment.
+                Worked across REST APIs, SQL systems, Azure cloud integration,
+                CI/CD pipelines, and UAT. Learned how production systems actually
+                behave versus how they're supposed to — which ended up being one
+                of the more useful lessons.
+              </p>
+              <ul class="tag-list">
+                <li>Python</li>
+                <li>SQL</li>
+                <li>REST APIs</li>
+                <li>Azure</li>
+                <li>ML</li>
+                <li>CI/CD</li>
+              </ul>
+            </article>
+
+            <article class="work-card fade-in">
+              <p class="mono-label accent">PRODUCT INTERN</p>
+              <h3>Digital Anatomics</h3>
+              <p class="meta">GTM Strategy &amp; Market Research</p>
+              <p>
+                Led 20+ stakeholder interviews and competitive analysis to build
+                a data-driven GTM strategy for a digital health product.
+                Developed a market entry framework with a projected $250K ROI.
+                Aligned design, engineering, and business leadership around a
+                shared product direction.
+              </p>
+              <ul class="tag-list">
+                <li>GTM Strategy</li>
+                <li>Stakeholder Interviews</li>
+                <li>Market Research</li>
+                <li>Competitive Analysis</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section section-cream">
+        <div class="container">
+          <header class="section-head fade-in">
+            <p class="mono-label">— Projects</p>
+            <h2>Things I've shipped.</h2>
+          </header>
+
+          <div class="featured-grid">
+            <article class="project-feature fade-in">
+              <p class="mono-label accent">Personal Project · LLM + RAG</p>
+              <h3>Mood Mate — AI Mental Health Copilot</h3>
+              <p>
+                Built end-to-end: LLM-powered conversational system with
+                retrieval-augmented generation, modular prompt pipelines, and
+                sentiment-aware responses. Early outputs looked good but weren't
+                reliable. That forced a full architecture rethink — redesigning
+                the input → retrieval → generation pipeline until consistency was
+                real, not just occasional. The core lesson: there's a big
+                difference between a prompt that works and a system that works.
+              </p>
+              <p class="impact-row">
+                <strong>40%</strong> engagement increase in beta · <strong>RAG</strong>
+                architecture · Full product owner
+              </p>
+              <ul class="tag-list dark-list">
+                <li>Python</li>
+                <li>LLMs</li>
+                <li>RAG</li>
+                <li>Prompt Pipelines</li>
+                <li>Context Handling</li>
+              </ul>
+            </article>
+
+            <article class="project-feature fade-in">
+              <p class="mono-label accent">Internal Tool · AI Systems</p>
+              <h3>AI Workflow &amp; Analytics Ecosystem (Weber Shandwick)</h3>
+              <p>
+                Mapped every analytics source and tool used across teams —
+                strengths, limitations, real use cases — into a structured
+                reference system. More importantly: identified where AI could slot
+                into existing workflows versus where it would create noise. Became
+                the internal reference for tool decisions.
+              </p>
+              <p class="impact-row">
+                Cross-functional adoption · Reduced tool-selection friction
+              </p>
+            </article>
+          </div>
+
+          <div class="mini-grid">
+            <article class="mini-card fade-in">
+              <p class="mono-label accent">AI AUTOMATION</p>
+              <h3>Gig Workforce Allocation System (Trax)</h3>
+              <p>
+                AI workflow redesign for gig workforce management with measurable
+                speed and reliability gains.
+              </p>
+              <p class="mini-metric">40% less manual work · hours to seconds</p>
+            </article>
+            <article class="mini-card fade-in">
+              <p class="mono-label accent">PRODUCT FRAMEWORK</p>
+              <h3>Product Discovery Framework (Kahana)</h3>
+              <p>
+                Discovery engine for funnel and usability insights that shaped
+                execution strategy.
+              </p>
+              <p class="mini-metric">
+                12 opportunities · 20% PMF improvement · 25% sprint efficiency
+              </p>
+            </article>
+            <article class="mini-card fade-in">
+              <p class="mono-label accent">GTM STRATEGY</p>
+              <h3>Digital Health GTM Strategy (Digital Anatomics)</h3>
+              <p>
+                Market entry and stakeholder alignment framework for a digital
+                health launch.
+              </p>
+              <p class="mini-metric">20+ interviews · $250K projected ROI</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="section section-tint">
+        <div class="container">
+          <header class="section-head fade-in">
+            <p class="mono-label">— Process</p>
+            <h2>How I approach problems.</h2>
+          </header>
+          <div class="process-grid">
+            <article class="process-step fade-in">
+              <span class="step-ghost">01</span>
+              <h3>Start with the system</h3>
+              <p>
+                Before solutions, I map the system: what's the input, what's the
+                expected output, where does it break, and who's downstream. The
+                problem is almost never where it appears.
+              </p>
+            </article>
+            <article class="process-step fade-in">
+              <span class="step-ghost">02</span>
+              <h3>Find the real constraint</h3>
+              <p>
+                Most problems have a root cause that's one or two levels below
+                the stated one. I'd rather spend time finding that than building
+                something elegant on top of a wrong assumption.
+              </p>
+            </article>
+            <article class="process-step fade-in">
+              <span class="step-ghost">03</span>
+              <h3>Build something real, fast</h3>
+              <p>
+                I don't pitch ideas without a prototype. Even a rough version
+                reveals tradeoffs you can't see on a whiteboard. I move fast to
+                the point where feedback is possible.
+              </p>
+            </article>
+            <article class="process-step fade-in">
+              <span class="step-ghost">04</span>
+              <h3>Measure and decide</h3>
+              <p>
+                The output is only as good as what you do with it. I track what
+                matters — not vanity metrics — and use it to decide whether to
+                push, pivot, or stop.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="container skills-grid">
+          <div class="fade-in">
+            <header class="section-head no-margin">
+              <p class="mono-label">— Skills</p>
+              <h2>What I use to build and decide.</h2>
+            </header>
+            <p class="lead">
+              My background is technical, but how I use it is product-oriented.
+              I'm most valuable at the layer where engineering constraints, user
+              needs, and business goals have to resolve into one decision. I can
+              read the code and write the spec — which means I can sit in both
+              rooms.
+            </p>
+          </div>
+          <div class="skill-groups">
+            <article class="skill-group fade-in">
+              <p class="mono-label accent">AI &amp; SYSTEMS</p>
+              <p>
+                LLMs · Prompt Engineering · AI Agents · Retrieval-Augmented
+                Generation · Workflow Automation · Model Evaluation
+              </p>
+            </article>
+            <article class="skill-group fade-in">
+              <p class="mono-label accent">PRODUCT</p>
+              <p>
+                PRDs · User Stories · Agile / Scrum · Roadmapping · A/B Testing ·
+                Stakeholder Management
+              </p>
+            </article>
+            <article class="skill-group fade-in">
+              <p class="mono-label accent">DATA &amp; ANALYTICS</p>
+              <p>
+                SQL · Tableau · Power BI · Google Analytics · Funnel Analysis ·
+                KPI Tracking
+              </p>
+            </article>
+            <article class="skill-group fade-in">
+              <p class="mono-label accent">ENGINEERING</p>
+              <p>Python · JavaScript · REST APIs · Azure · Git · MongoDB · Next.js</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section section-tint">
+        <div class="container about-grid">
+          <div class="fade-in">
+            <header class="section-head no-margin">
+              <p class="mono-label">— About</p>
+              <h2>Technical depth. Product judgment.</h2>
+            </header>
+            <p>
+              I'm a CS grad finishing a Master's in Engineering Management at
+              Johns Hopkins. My background is technical. The way I work is
+              product-oriented. That combination is deliberate — I wanted to
+              understand systems deeply enough to know what's possible, and
+              business context well enough to know what's worth doing.
+            </p>
+            <p>
+              At Weber Shandwick, I was the first hire into a newly created AI
+              analytics role. No template, no senior person to shadow in the same
+              function. Most of what I built, I built by figuring out what the
+              team actually needed — not what AI could theoretically do. That
+              distinction matters to me.
+            </p>
+            <p>
+              I care about the difference between AI that impresses and AI that
+              gets used. Building the second kind requires understanding the
+              workflow, the user, and the failure modes — not just the model.
+            </p>
+          </div>
+          <aside class="about-aside fade-in">
+            <blockquote>
+              The hard part isn't having an LLM. It's designing the workflow
+              around it so the output is reliable enough to trust.
+            </blockquote>
+            <div class="education-callout">
+              <p>Johns Hopkins University · MEM · GPA 3.82 · Graduating May 2026</p>
+              <p>Visvesvaraya Technological University · B.S. Computer Science</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="container contact-wrap fade-in">
+          <h2 class="contact-title">
+            Let's work
+            <br />
+            <span>together.</span>
+          </h2>
           <p>
-            I am a developer focused on creating responsive user interfaces and
-            reliable backend integrations. My approach combines clean code,
-            thoughtful UI decisions, and performance-minded implementation.
+            I'm looking for AI product, product analytics, workflow automation,
+            or applied AI roles — somewhere with real ownership and high
+            standards. If that's your team, reach out.
           </p>
-          <p>
-            I'm currently open to internship and full-time opportunities where I
-            can contribute to real-world products and grow as an engineer.
-          </p>
-        </div>
-      </section>
-
-      <section id="skills" class="section section-alt">
-        <div class="container">
-          <h2>Skills</h2>
-          <ul class="pill-list">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript (ES6+)</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>Express</li>
-            <li>REST APIs</li>
-            <li>Git & GitHub</li>
-            <li>SQL</li>
-            <li>MongoDB</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <div class="container">
-          <h2>Featured Projects</h2>
-          <div class="project-grid">
-            <article class="card">
-              <h3>Task Planner App</h3>
-              <p>
-                A productivity app with task boards, reminders, and drag-and-drop
-                organization to help teams stay on schedule.
-              </p>
-              <p class="tech">React • Node.js • MongoDB</p>
-              <div class="card-links">
-                <a href="#" aria-label="Task Planner live demo">Live Demo</a>
-                <a href="#" aria-label="Task Planner source code">Source</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <h3>Smart Budget Tracker</h3>
-              <p>
-                An expense tracking dashboard that visualizes spending patterns
-                and categorizes transactions with a clean, mobile-first UI.
-              </p>
-              <p class="tech">JavaScript • Chart.js • Firebase</p>
-              <div class="card-links">
-                <a href="#" aria-label="Budget Tracker live demo">Live Demo</a>
-                <a href="#" aria-label="Budget Tracker source code">Source</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <h3>Campus Connect Platform</h3>
-              <p>
-                A student community web platform for posting events, searching
-                clubs, and sharing resources across departments.
-              </p>
-              <p class="tech">Next.js • PostgreSQL • Tailwind CSS</p>
-              <div class="card-links">
-                <a href="#" aria-label="Campus Connect live demo">Live Demo</a>
-                <a href="#" aria-label="Campus Connect source code">Source</a>
-              </div>
-            </article>
+          <div class="button-row center">
+            <a class="button button-solid" href="mailto:vaidehi@email.com">Email</a>
+            <a class="button button-ghost" href="https://www.linkedin.com/in/your-link" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="button button-ghost" href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
           </div>
-        </div>
-      </section>
-
-      <section id="experience" class="section section-alt">
-        <div class="container">
-          <h2>Experience</h2>
-          <div class="timeline">
-            <article class="timeline-item">
-              <p class="timeline-date">2025 - Present</p>
-              <h3>Web Development Intern</h3>
-              <p class="timeline-org">Example Tech</p>
-              <p>
-                Built reusable front-end components, improved page load
-                performance, and collaborated with designers to ship new features.
-              </p>
-            </article>
-            <article class="timeline-item">
-              <p class="timeline-date">2024 - 2025</p>
-              <h3>Freelance Front-End Developer</h3>
-              <p class="timeline-org">Self-Employed</p>
-              <p>
-                Delivered responsive websites for local businesses and implemented
-                analytics-ready landing pages optimized for conversions.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="container">
-          <h2>Let's Connect</h2>
-          <p>
-            Interested in collaborating or discussing an opportunity? I'd be
-            happy to talk.
-          </p>
-          <a class="button button-primary" href="mailto:hello@example.com"
-            >Send Email</a
-          >
+          <p class="mono-label">Based in [City] · Open to remote · Graduating May 2026</p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-content">
-        <p>© <span id="year"></span> Vaidehi. All rights reserved.</p>
-        <a href="#top">Back to top ↑</a>
+      <div class="container footer-grid">
+        <p>Vaidehi Patel · 2025</p>
+        <p>Built for humans, not robots.</p>
       </div>
     </footer>
 

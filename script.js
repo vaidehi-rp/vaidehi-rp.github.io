@@ -1,54 +1,57 @@
-const navToggleButton = document.querySelector(".nav-toggle");
-const navMenu = document.querySelector(".site-nav");
-const themeButton = document.getElementById("themeButton");
-const themeIcon = document.getElementById("themeIcon");
-const currentYear = document.getElementById("year");
+const navToggle = document.getElementById("navToggle");
+const siteNav = document.getElementById("siteNav");
+const navLinks = [...document.querySelectorAll("[data-nav-link]")];
+const sections = [...document.querySelectorAll("main section[id]")];
+const revealItems = [...document.querySelectorAll(".fade-in")];
 
-if (currentYear) {
-  currentYear.textContent = new Date().getFullYear();
-}
-
-if (navToggleButton && navMenu) {
-  navToggleButton.addEventListener("click", () => {
-    const expanded = navToggleButton.getAttribute("aria-expanded") === "true";
-    navToggleButton.setAttribute("aria-expanded", String(!expanded));
-    navMenu.classList.toggle("is-open");
+if (navToggle && siteNav) {
+  navToggle.addEventListener("click", () => {
+    const expanded = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!expanded));
+    siteNav.classList.toggle("is-open");
   });
 
-  navMenu.querySelectorAll("a").forEach((link) => {
+  navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      navMenu.classList.remove("is-open");
-      navToggleButton.setAttribute("aria-expanded", "false");
+      siteNav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
     });
   });
 }
 
-const getPreferredTheme = () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    return savedTheme;
-  }
+const revealObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  },
+  { threshold: 0.1 }
+);
 
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
+revealItems.forEach((item, index) => {
+  item.style.transitionDelay = `${Math.min(index * 35, 240)}ms`;
+  revealObserver.observe(item);
+});
 
-const setTheme = (theme) => {
-  document.body.classList.toggle("light-theme", theme === "light");
-  localStorage.setItem("theme", theme);
-  if (themeIcon) {
-    themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
-  }
-};
+const setActiveNavLink = () => {
+  const scrollY = window.scrollY + 160;
+  let activeId = sections[0]?.id;
 
-if (themeButton) {
-  setTheme(getPreferredTheme());
-
-  themeButton.addEventListener("click", () => {
-    const activeTheme = document.body.classList.contains("light-theme")
-      ? "light"
-      : "dark";
-    setTheme(activeTheme === "dark" ? "light" : "dark");
+  sections.forEach((section) => {
+    if (scrollY >= section.offsetTop) {
+      activeId = section.id;
+    }
   });
-}
+
+  navLinks.forEach((link) => {
+    const target = link.getAttribute("href")?.slice(1);
+    link.classList.toggle("is-active", target === activeId);
+  });
+};
+
+setActiveNavLink();
+window.addEventListener("scroll", setActiveNavLink, { passive: true });

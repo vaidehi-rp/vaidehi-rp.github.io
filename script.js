@@ -3,6 +3,15 @@ const siteNav = document.getElementById("siteNav");
 const navLinks = [...document.querySelectorAll("[data-nav-link]")];
 const sections = [...document.querySelectorAll("main section[id]")];
 const revealItems = [...document.querySelectorAll(".fade-in")];
+const ownerAnalytics = document.getElementById("ownerAnalytics");
+const ownerVisitCount = document.getElementById("ownerVisitCount");
+
+const OWNER_QUERY_PARAM = "owner";
+const OWNER_ACCESS_CODE = "vp09";
+const OWNER_STORAGE_KEY = "vp-owner-mode";
+const LOCAL_FALLBACK_COUNTER_KEY = "vp-local-visit-count";
+const VISIT_COUNTER_NAMESPACE = "vaidehi-rp-portfolio";
+const VISIT_COUNTER_KEY = "total-visits";
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
@@ -55,3 +64,57 @@ const setActiveNavLink = () => {
 
 setActiveNavLink();
 window.addEventListener("scroll", setActiveNavLink, { passive: true });
+
+const searchParams = new URLSearchParams(window.location.search);
+const ownerToken = searchParams.get(OWNER_QUERY_PARAM);
+
+if (ownerToken === OWNER_ACCESS_CODE) {
+  localStorage.setItem(OWNER_STORAGE_KEY, "true");
+} else if (ownerToken === "off") {
+  localStorage.removeItem(OWNER_STORAGE_KEY);
+}
+
+if (ownerToken) {
+  searchParams.delete(OWNER_QUERY_PARAM);
+  const nextQuery = searchParams.toString();
+  const nextUrl = `${window.location.pathname}${
+    nextQuery ? `?${nextQuery}` : ""
+  }${window.location.hash}`;
+  window.history.replaceState({}, "", nextUrl);
+}
+
+const isOwnerMode = localStorage.getItem(OWNER_STORAGE_KEY) === "true";
+
+const revealOwnerAnalytics = (value, isLocalFallback = false) => {
+  if (!isOwnerMode || !ownerAnalytics || !ownerVisitCount) {
+    return;
+  }
+
+  ownerVisitCount.textContent = String(value);
+  if (isLocalFallback) {
+    ownerVisitCount.textContent += " (local)";
+  }
+  ownerAnalytics.hidden = false;
+  ownerAnalytics.setAttribute("aria-hidden", "false");
+};
+
+const updateVisitCounter = async () => {
+  try {
+    const response = await fetch(
+      `https://api.countapi.xyz/hit/${VISIT_COUNTER_NAMESPACE}/${VISIT_COUNTER_KEY}`
+    );
+    if (!response.ok) {
+      throw new Error("Counter request failed");
+    }
+
+    const data = await response.json();
+    revealOwnerAnalytics(data.value);
+  } catch (error) {
+    const localCount =
+      Number(localStorage.getItem(LOCAL_FALLBACK_COUNTER_KEY) || "0") + 1;
+    localStorage.setItem(LOCAL_FALLBACK_COUNTER_KEY, String(localCount));
+    revealOwnerAnalytics(localCount, true);
+  }
+};
+
+updateVisitCounter();

@@ -122,7 +122,22 @@ const updateVisitCounter = async () => {
 updateVisitCounter();
 
 if (profilePhoto && profilePhotoCard) {
-  profilePhoto.addEventListener("error", () => {
+  const markPhotoMissing = () => {
     profilePhotoCard.classList.add("is-missing-photo");
-  });
+  };
+
+  const markPhotoLoaded = () => {
+    profilePhotoCard.classList.remove("is-missing-photo");
+  };
+
+  profilePhoto.addEventListener("error", markPhotoMissing);
+  profilePhoto.addEventListener("load", markPhotoLoaded);
+
+  if (profilePhoto.complete) {
+    if (profilePhoto.naturalWidth > 0) {
+      markPhotoLoaded();
+    } else {
+      markPhotoMissing();
+    }
+  }
 }

@@ -5,6 +5,8 @@ const sections = [...document.querySelectorAll("main section[id]")];
 const revealItems = [...document.querySelectorAll(".fade-in")];
 const ownerAnalytics = document.getElementById("ownerAnalytics");
 const ownerVisitCount = document.getElementById("ownerVisitCount");
+const profilePhoto = document.getElementById("profilePhoto");
+const profilePhotoCard = document.getElementById("profilePhotoCard");
 
 const OWNER_QUERY_PARAM = "owner";
 const OWNER_ACCESS_CODE = "vp09";
@@ -118,3 +120,9 @@ const updateVisitCounter = async () => {
 };
 
 updateVisitCounter();
+
+if (profilePhoto && profilePhotoCard) {
+  profilePhoto.addEventListener("error", () => {
+    profilePhotoCard.classList.add("is-missing-photo");
+  });
+}

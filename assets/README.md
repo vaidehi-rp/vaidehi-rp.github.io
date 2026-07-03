@@ -1,5 +1,6 @@
-Place your professional photo here as:
+Upload your portfolio files here:
 
-- `vaidehi-profile.jpg`
+- `vaidehi-profile.jpg` — hero photo
+- `vaidehi-resume.pdf` — resume linked from the Contact section
 
-The portfolio hero image is wired to `assets/vaidehi-profile.jpg`.
+The site expects these exact filenames. After uploading, wait a minute for GitHub Pages to rebuild, then hard refresh your site.

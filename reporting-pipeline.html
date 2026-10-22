@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Reporting Pipeline Automation: a workflow and Q&A agent that automated the data prep behind an audience analysis methodology."
+    />
+    <title>Reporting Pipeline Automation | Vaidehi Patel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&family=Lora:wght@400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-shell">
+        <a href="index.html" class="logo">VP</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="siteNav"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+          <a href="index.html#work" data-nav-link>Work</a>
+          <a href="index.html#projects" data-nav-link>Projects</a>
+          <a href="index.html#process" data-nav-link>Process</a>
+          <a href="index.html#about" data-nav-link>About</a>
+          <a href="index.html#contact" data-nav-link>Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="detail-hero" aria-label="Project overview">
+        <div class="container">
+          <a class="back-link" href="index.html#projects">← Back to projects</a>
+          <p class="mono-label accent">Workflow Automation · Agent</p>
+          <h1 class="detail-title">Reporting Pipeline Automation</h1>
+          <p class="detail-subtitle">
+            A workflow and Q&amp;A agent that automated the data prep behind an
+            audience analysis methodology.
+          </p>
+          <p class="detail-note">
+            Built at Weber Shandwick. Client details are not shared on this page.
+          </p>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="problem-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">01</p>
+            <h2 id="problem-heading">The problem</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              Weber uses a methodology that ranks an audience's passion points by
+              volume, sentiment, and engagement.
+            </p>
+            <p>
+              Behind every report was manual data prep. Someone pulled data from
+              social listening tools, decided what to pull, extracted it, cleaned
+              it, normalized it into an Excel template, then analyzed it and
+              packaged the insights.
+            </p>
+            <p>
+              It took hours each time, and nobody had flagged it as something to
+              fix.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section section-tint" aria-labelledby="built-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">02</p>
+            <h2 id="built-heading">What I built</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              Most of those steps repeated, so I built a workflow on Vertex AI
+              that extracts, cleans, and normalizes the data and fills the
+              existing template.
+            </p>
+            <p>
+              On top of it I built an agent that analysts can ask questions at any
+              stage.
+            </p>
+            <p>
+              I had a working prototype before I brought it to my manager, and I
+              showed it on a real report the team already knew.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="how-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">03</p>
+            <h2 id="how-heading">How it works</h2>
+          </header>
+
+          <div
+            class="flow fade-in"
+            role="img"
+            aria-label="Flowchart. Before: a manual process that took hours each time, with five steps: pick data, extract, clean, normalize, analyze. After: an automated workflow built by me with four steps, extract, clean, normalize, and fill the template, plus a Q&A agent analysts can ask at any time. The template and the Q&A agent both feed into a final step where analysts rank passion points and package insights. Judgment stays with people."
+          >
+            <div>
+              <p class="mono-label flow-row-label">Before: manual, hours each time</p>
+              <div class="flow-row is-manual">
+                <div class="flow-box"><p class="flow-title">Pick data</p></div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box"><p class="flow-title">Extract</p></div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box"><p class="flow-title">Clean</p></div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box"><p class="flow-title">Normalize</p></div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box"><p class="flow-title">Analyze</p></div>
+              </div>
+            </div>
+
+            <div>
+              <p class="mono-label accent flow-row-label">
+                After: automated workflow plus an agent
+              </p>
+              <div class="flow-row is-built">
+                <div class="flow-box">
+                  <p class="flow-title">Extract</p>
+                  <p class="flow-sub">Pulls the data</p>
+                </div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box">
+                  <p class="flow-title">Clean</p>
+                  <p class="flow-sub">Tidies the data</p>
+                </div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box">
+                  <p class="flow-title">Normalize</p>
+                  <p class="flow-sub">Same format</p>
+                </div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box">
+                  <p class="flow-title">Template</p>
+                  <p class="flow-sub">Filled in</p>
+                </div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box">
+                  <p class="flow-title">Q&amp;A agent</p>
+                  <p class="flow-sub">Ask any time</p>
+                </div>
+              </div>
+
+              <div class="flow-drop" aria-hidden="true">
+                <span class="flow-drop-cell is-empty"></span>
+                <span class="flow-drop-spacer"></span>
+                <span class="flow-drop-cell is-empty"></span>
+                <span class="flow-drop-spacer"></span>
+                <span class="flow-drop-cell is-empty"></span>
+                <span class="flow-drop-spacer"></span>
+                <span class="flow-drop-cell is-first-drop">↓</span>
+                <span class="flow-drop-spacer"></span>
+                <span class="flow-drop-cell">↓</span>
+              </div>
+
+              <div class="flow-bar">
+                <p class="flow-title">
+                  Analysts rank passion points and package insights
+                </p>
+                <p class="flow-sub">Judgment stays with people</p>
+              </div>
+            </div>
+
+            <ul class="flow-legend">
+              <li>
+                <span class="flow-swatch is-built" aria-hidden="true"></span>
+                Built by me
+              </li>
+              <li>
+                <span class="flow-swatch is-manual" aria-hidden="true"></span>
+                Manual or human
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section section-tint" aria-labelledby="people-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">04</p>
+            <h2 id="people-heading">What stayed with people</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              I automated the data prep and left the methodology and the analysts'
+              judgment as they were.
+            </p>
+            <p>
+              Analysts still review the output, rank the passion points, and
+              package the insights.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="fix-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">05</p>
+            <h2 id="fix-heading">A problem I had to fix</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              Early on, outputs varied on real data. I traced it to sources that
+              weren't normalized.
+            </p>
+            <p>
+              I added a cleaning and normalization layer before the data reached
+              the agent, plus validation checks, and results became consistent.
+            </p>
+            <p>
+              The lesson was that clean inputs matter more than a clever prompt.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section section-tint" aria-labelledby="result-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">06</p>
+            <h2 id="result-heading">Result</h2>
+          </header>
+          <div class="detail-callout fade-in">
+            <p>It became an official deliverable used across four teams.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="limits-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">07</p>
+            <h2 id="limits-heading">Limits</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              The workflow handles the repeatable prep. It doesn't replace the
+              analysts' judgment, and a person reviews the output before it goes
+              anywhere.
+            </p>
+          </div>
+          <a class="back-link back-link-bottom" href="index.html#projects"
+            >← Back to projects</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>Vaidehi Patel · 2026</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

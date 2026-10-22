@@ -1199,9 +1199,203 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   max-width: 680px;
 }
 
+/* Flowchart (HTML + CSS) */
+.flow {
+  max-width: 900px;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.flow-row-label {
+  margin-bottom: 0.7rem;
+}
+
+.flow-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.flow-box {
+  flex: 1 1 0;
+  min-width: 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.9rem 0.8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flow-box .flow-title {
+  margin: 0;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 0.92rem !important;
+  font-weight: 500;
+  color: var(--text) !important;
+}
+
+.flow-box .flow-sub {
+  margin: 0.25rem 0 0;
+  font-family: "DM Mono", monospace !important;
+  font-size: 0.64rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary) !important;
+}
+
+.flow-row.is-manual .flow-box {
+  background: #e6e0d5;
+  border-color: #cfc5b2;
+}
+
+.flow-row.is-manual .flow-title {
+  color: var(--text-secondary) !important;
+}
+
+.flow-row.is-built .flow-box {
+  background: var(--tint);
+  border-color: var(--accent);
+}
+
+.flow-row.is-built .flow-title {
+  color: var(--accent-hover) !important;
+}
+
+.flow-arrow {
+  flex: 0 0 auto;
+  width: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DM Mono", monospace;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.flow-arrow::before {
+  content: "→";
+}
+
+.flow-row.is-built .flow-arrow {
+  color: var(--accent);
+}
+
+.flow-drop {
+  display: flex;
+  gap: 0;
+  margin-top: 0.35rem;
+}
+
+.flow-drop-cell {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+  font-family: "DM Mono", monospace;
+  font-size: 1.15rem;
+  color: var(--accent);
+  line-height: 1;
+  padding: 0.15rem 0;
+}
+
+.flow-drop-spacer {
+  flex: 0 0 auto;
+  width: 1.6rem;
+}
+
+.flow-bar {
+  border: 1px solid #cfc5b2;
+  background: #e6e0d5;
+  padding: 1rem 1.2rem;
+  text-align: center;
+}
+
+.flow-bar .flow-title {
+  margin: 0;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 500;
+  color: var(--text) !important;
+}
+
+.flow-bar .flow-sub {
+  margin: 0.3rem 0 0;
+  font-family: "DM Mono", monospace !important;
+  font-size: 0.66rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary) !important;
+}
+
+.flow-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.flow-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flow-swatch {
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 1px solid var(--border);
+  display: inline-block;
+}
+
+.flow-swatch.is-built {
+  background: var(--tint);
+  border-color: var(--accent);
+}
+
+.flow-swatch.is-manual {
+  background: #e6e0d5;
+  border-color: #cfc5b2;
+}
+
 @media (max-width: 768px) {
   .detail-hero {
     padding-top: 6.5rem;
+  }
+
+  .flow-row {
+    flex-direction: column;
+  }
+
+  .flow-arrow {
+    width: auto;
+    padding: 0.3rem 0;
+  }
+
+  .flow-arrow::before {
+    content: "↓";
+  }
+
+  .flow-drop {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .flow-drop-cell {
+    padding: 0.3rem 0;
+  }
+
+  .flow-drop-cell.is-empty,
+  .flow-drop-cell.is-first-drop,
+  .flow-drop-spacer {
+    display: none;
   }
 
   .two-col-list,

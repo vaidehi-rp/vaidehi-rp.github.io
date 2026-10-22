@@ -121,6 +121,54 @@ const updateVisitCounter = async () => {
 
 updateVisitCounter();
 
+const personaGallery = document.getElementById("personaGallery");
+
+if (personaGallery && personaGallery.dataset.manifest) {
+  const galleryBase = personaGallery.dataset.manifest.replace(/[^/]*$/, "");
+
+  fetch(personaGallery.dataset.manifest, { cache: "no-store" })
+    .then((response) => (response.ok ? response.json() : []))
+    .then((items) => {
+      if (!Array.isArray(items) || items.length === 0) {
+        return;
+      }
+
+      items.forEach((item) => {
+        if (!item || !item.src) {
+          return;
+        }
+
+        const src = /^(https?:)?\//.test(item.src)
+          ? item.src
+          : `${galleryBase}${item.src}`;
+        const figure = document.createElement("figure");
+        const link = document.createElement("a");
+        const image = document.createElement("img");
+        const caption = document.createElement("figcaption");
+
+        link.href = src;
+        link.target = "_blank";
+        link.rel = "noopener";
+        image.src = src;
+        image.alt = item.alt || "";
+        image.loading = "lazy";
+        caption.textContent = item.caption || "";
+
+        link.appendChild(image);
+        figure.appendChild(link);
+        if (caption.textContent) {
+          figure.appendChild(caption);
+        }
+        personaGallery.appendChild(figure);
+      });
+
+      if (personaGallery.children.length > 0) {
+        personaGallery.hidden = false;
+      }
+    })
+    .catch(() => {});
+}
+
 if (profilePhoto && profilePhotoCard) {
   const markPhotoMissing = () => {
     profilePhotoCard.classList.add("is-missing-photo");

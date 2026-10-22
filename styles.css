@@ -1005,9 +1005,221 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   margin: 0;
 }
 
+/* Numbered vertical steps */
+.step-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 66ch;
+  counter-reset: step;
+}
+
+.step-list > li {
+  counter-increment: step;
+  position: relative;
+  padding: 0 0 1.1rem 3rem;
+}
+
+.step-list > li:last-child {
+  padding-bottom: 0;
+}
+
+.step-list > li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.step-list > li > p {
+  margin: 0;
+}
+
+.rules-block {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1rem 1.1rem;
+}
+
+.rules-block .mono-label {
+  margin-bottom: 0.6rem;
+}
+
+.rules-block ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.rules-block li {
+  margin-bottom: 0.45rem;
+}
+
+.rules-block li:last-child {
+  margin-bottom: 0;
+}
+
+/* Compact two-column list */
+.two-col-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 66ch;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem 1.5rem;
+}
+
+.two-col-list li {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.55rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+}
+
+/* Persona card */
+.persona-card {
+  max-width: 560px;
+  border: 1px solid var(--border);
+  background: #fbf8f0;
+  padding: 1.3rem 1.4rem;
+}
+
+.persona-card h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.2rem;
+}
+
+.persona-card .persona-line {
+  margin-bottom: 1rem;
+}
+
+.persona-card dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.55rem 1.1rem;
+}
+
+.persona-card dt {
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding-top: 0.2rem;
+}
+
+.persona-card dd {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+}
+
+/* Optional image gallery */
+.persona-gallery {
+  margin-top: 1.6rem;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.persona-gallery[hidden] {
+  display: none;
+}
+
+.persona-gallery figure {
+  margin: 0;
+  border: 1px solid var(--border);
+  background: #f7f2e7;
+  padding: 0.5rem;
+}
+
+.persona-gallery a {
+  display: block;
+}
+
+.persona-gallery img {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--border);
+}
+
+.persona-gallery figcaption {
+  margin-top: 0.55rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+/* Chat layout */
+.chat {
+  max-width: 680px;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.chat-message {
+  border: 1px solid var(--border);
+  padding: 0.95rem 1.1rem;
+  max-width: 88%;
+}
+
+.chat-message.from-user {
+  background: var(--surface);
+  justify-self: end;
+}
+
+.chat-message.from-agent {
+  background: #fbf8f0;
+  border-left: 3px solid var(--accent);
+  justify-self: start;
+}
+
+.chat-message .mono-label {
+  margin-bottom: 0.35rem;
+  font-size: 0.66rem;
+}
+
+.chat-message p:not(.mono-label) {
+  margin: 0;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.chat-caption {
+  margin-top: 1rem;
+  max-width: 680px;
+}
+
 @media (max-width: 768px) {
   .detail-hero {
     padding-top: 6.5rem;
+  }
+
+  .two-col-list,
+  .persona-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .persona-card dl {
+    grid-template-columns: 1fr;
+    gap: 0.25rem 0;
+  }
+
+  .persona-card dd {
+    margin-bottom: 0.6rem;
+  }
+
+  .chat-message {
+    max-width: 100%;
   }
 
   .detail-section {

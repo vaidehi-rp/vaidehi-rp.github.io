@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Synthetic Audiences: persona agents that respond like a specific audience, built to test messaging."
+    />
+    <title>Synthetic Audiences | Vaidehi Patel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&family=Lora:wght@400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-shell">
+        <a href="index.html" class="logo">VP</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="siteNav"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+          <a href="index.html#work" data-nav-link>Work</a>
+          <a href="index.html#projects" data-nav-link>Projects</a>
+          <a href="index.html#process" data-nav-link>Process</a>
+          <a href="index.html#about" data-nav-link>About</a>
+          <a href="index.html#contact" data-nav-link>Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="detail-hero" aria-label="Project overview">
+        <div class="container">
+          <a class="back-link" href="index.html#projects">← Back to projects</a>
+          <p class="mono-label accent">AI Agents · Message Testing</p>
+          <h1 class="detail-title">Synthetic Audiences</h1>
+          <p class="detail-subtitle">
+            Persona agents that respond like a specific audience, built to test
+            messaging.
+          </p>
+          <p class="detail-note">
+            Built at Weber Shandwick for multiple clients. Client details are not
+            shared on this page.
+          </p>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="ask-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">01</p>
+            <h2 id="ask-heading">The ask</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              Teams wanted a faster way to test messaging against specific
+              audiences.
+            </p>
+            <p>
+              The request was to build personas that respond and behave like the
+              real persona, so a strategist could ask how a message would land
+              and get a useful reaction.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section section-tint" aria-labelledby="data-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">02</p>
+            <h2 id="data-heading">The data</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              Demographic, psychographic, and survey data from audience tools like
+              StatSocial and Audience Console, plus research briefs and strategy
+              briefs.
+            </p>
+            <p>
+              The material was long, unstructured, and formatted differently from
+              client to client.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="process-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">03</p>
+            <h2 id="process-heading">The process</h2>
+          </header>
+          <ol class="step-list fade-in">
+            <li><p>Clean up and structure the data.</p></li>
+            <li>
+              <p>Use NotebookLM to read and organize the long, unstructured briefs.</p>
+            </li>
+            <li>
+              <p>Create a standardized template that defines what each persona needs.</p>
+            </li>
+            <li>
+              <p>
+                Check data quality, fill gaps, and keep formats consistent across
+                every persona.
+              </p>
+            </li>
+            <li>
+              <p>
+                Turn each persona into a standardized document that goes into the
+                agent.
+              </p>
+            </li>
+            <li>
+              <p>
+                Write guidance prompts for the agent: guardrails, behaviors, how it
+                should respond, what it should be aware of, and how to read each
+                file based on what the user is asking.
+              </p>
+              <div class="rules-block">
+                <p class="mono-label accent">Rules the agent follows</p>
+                <ul>
+                  <li>
+                    Stay inside the persona data. If the data doesn't cover
+                    something, say so and don't guess.
+                  </li>
+                  <li>
+                    Read the files based on the context of the question. Don't
+                    assume details that aren't there.
+                  </li>
+                  <li>
+                    If something is unclear, ask. Keep follow-ups to a minimum, one
+                    short question at a time.
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section
+        class="detail-section section-tint"
+        aria-labelledby="template-heading"
+      >
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">04</p>
+            <h2 id="template-heading">What a persona file includes</h2>
+          </header>
+          <div class="detail-copy detail-intro fade-in">
+            <p class="detail-note">A simplified view of the template.</p>
+          </div>
+          <ul class="two-col-list fade-in">
+            <li>Demographics</li>
+            <li>Psychographics and values</li>
+            <li>Media and platform habits</li>
+            <li>Purchase behavior</li>
+            <li>Pain points and objections</li>
+            <li>Language and tone</li>
+            <li>Source and date of the data</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="persona-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">05</p>
+            <h2 id="persona-heading">Example persona</h2>
+          </header>
+          <div class="detail-copy detail-intro fade-in">
+            <p class="detail-note">
+              Fictional example. Real client personas are not shown.
+            </p>
+          </div>
+          <article class="persona-card fade-in">
+            <p class="mono-label accent">Persona</p>
+            <h3>Maya</h3>
+            <p class="persona-line">29, urban renter, works in marketing</p>
+            <dl>
+              <dt>Values</dt>
+              <dd>Convenience, saving money, straight answers</dd>
+              <dt>Habits</dt>
+              <dd>Scrolls short video after work, reads reviews before buying</dd>
+              <dt>Skeptical of</dt>
+              <dd>Generic claims, "fresh" and "easy" with no specifics</dd>
+              <dt>Price sensitivity</dt>
+              <dd>High</dd>
+            </dl>
+          </article>
+          <div
+            class="persona-gallery"
+            id="personaGallery"
+            data-manifest="assets/synthetic-audiences/images.json"
+            hidden
+            aria-label="Project images"
+          ></div>
+        </div>
+      </section>
+
+      <section class="detail-section section-tint" aria-labelledby="chat-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">06</p>
+            <h2 id="chat-heading">Sample input and output</h2>
+          </header>
+          <div class="detail-copy detail-intro fade-in">
+            <p class="detail-note">
+              Fictional brand and persona, to show how it works.
+            </p>
+          </div>
+          <div class="chat fade-in">
+            <div class="chat-message from-user">
+              <p class="mono-label">Strategist</p>
+              <p>
+                Test this headline with Maya: "Dinner, handled. Fresh ingredients,
+                zero planning."
+              </p>
+            </div>
+            <div class="chat-message from-agent">
+              <p class="mono-label accent">Maya</p>
+              <p>
+                The "zero planning" part gets me. I work late a few nights a week
+                and I'm tired of deciding what to eat. But "fresh" makes me
+                skeptical, because every meal kit says that. I'd stop scrolling for
+                something specific, like how long dinner takes or what a meal
+                costs. I watch my grocery spending, so a price per meal would help.
+              </p>
+            </div>
+            <div class="chat-message from-user">
+              <p class="mono-label">Strategist</p>
+              <p>What does she think about the packaging?</p>
+            </div>
+            <div class="chat-message from-agent">
+              <p class="mono-label accent">Maya</p>
+              <p>
+                My profile doesn't say how I feel about packaging, so I'd rather
+                not guess. I can tell you how I shop and what I look at first, if
+                that helps.
+              </p>
+            </div>
+          </div>
+          <p class="detail-note chat-caption">
+            The second answer shows the guardrail. The agent says when the persona
+            data doesn't cover a question.
+          </p>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="limits-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">07</p>
+            <h2 id="limits-heading">Limits</h2>
+          </header>
+          <div class="detail-callout fade-in">
+            <p>
+              A synthetic audience is a first read on how a message might land. It
+              doesn't replace real audience research, and people review the output
+              before it goes anywhere.
+            </p>
+          </div>
+          <a class="back-link back-link-bottom" href="index.html#projects"
+            >← Back to projects</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>Vaidehi Patel · 2026</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

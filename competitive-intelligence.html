@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Competitive Intelligence Agent: an agent that tracks peer agencies on a set framework and flags unusual moves."
+    />
+    <title>Competitive Intelligence Agent | Vaidehi Patel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&family=Lora:wght@400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-shell">
+        <a href="index.html" class="logo">VP</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="siteNav"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+          <a href="index.html#work" data-nav-link>Work</a>
+          <a href="index.html#projects" data-nav-link>Projects</a>
+          <a href="index.html#process" data-nav-link>Process</a>
+          <a href="index.html#about" data-nav-link>About</a>
+          <a href="index.html#contact" data-nav-link>Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="detail-hero" aria-label="Project overview">
+        <div class="container">
+          <a class="back-link" href="index.html#projects">← Back to projects</a>
+          <p class="mono-label accent">AI Agent · Competitive Intelligence</p>
+          <h1 class="detail-title">Competitive Intelligence Agent</h1>
+          <p class="detail-subtitle">
+            An agent that tracks peer agencies on a set framework and flags
+            unusual moves.
+          </p>
+          <p class="detail-note">
+            Built at Weber Shandwick. Peer names and findings are not shown on
+            this page.
+          </p>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="problem-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">01</p>
+            <h2 id="problem-heading">The problem</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              Keeping up with how peer agencies are doing meant checking many
+              places by hand: financials, industry rankings, awards, and more.
+            </p>
+            <p>
+              The information was scattered and formatted differently in each
+              source.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="detail-section section-tint"
+        aria-labelledby="framework-heading"
+      >
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">02</p>
+            <h2 id="framework-heading">The framework</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              I defined which peers to track, based on how similar they are to
+              Weber Shandwick, and what to evaluate for each one.
+            </p>
+            <p>
+              The same framework is applied to every peer so the results can be
+              compared.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="how-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">03</p>
+            <h2 id="how-heading">How it works</h2>
+          </header>
+
+          <div
+            class="flow fade-in"
+            role="img"
+            aria-label="Flowchart in six steps. About 10 sources, rankings and awards, flow into structured documents in the same format each time, then into a database updated weekly. From there, NotebookLM is a manual step to sort, clean, and extract. The cleaned material goes to a trained agent that flags unusual moves, which sends a weekly email with a link to the update. All steps are automated except NotebookLM."
+          >
+            <div>
+              <div class="flow-row is-mixed">
+                <div class="flow-box is-built">
+                  <p class="flow-title">About 10 sources</p>
+                  <p class="flow-sub">Rankings and awards</p>
+                </div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box is-built">
+                  <p class="flow-title">Structured docs</p>
+                  <p class="flow-sub">Same format each time</p>
+                </div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box is-built">
+                  <p class="flow-title">Database</p>
+                  <p class="flow-sub">Updated weekly</p>
+                </div>
+              </div>
+
+              <div class="flow-return" aria-hidden="true"></div>
+
+              <div class="flow-row is-mixed">
+                <div class="flow-box is-manual">
+                  <p class="flow-title">NotebookLM</p>
+                  <p class="flow-sub">Sort, clean, extract</p>
+                </div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box is-built">
+                  <p class="flow-title">Trained agent</p>
+                  <p class="flow-sub">Flags unusual moves</p>
+                </div>
+                <span class="flow-arrow" aria-hidden="true"></span>
+                <div class="flow-box is-built">
+                  <p class="flow-title">Weekly email</p>
+                  <p class="flow-sub">Link to the update</p>
+                </div>
+              </div>
+            </div>
+
+            <ul class="flow-legend">
+              <li>
+                <span class="flow-swatch is-built" aria-hidden="true"></span>
+                Automated
+              </li>
+              <li>
+                <span class="flow-swatch is-manual" aria-hidden="true"></span>
+                Manual step
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section section-tint" aria-labelledby="steps-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">04</p>
+            <h2 id="steps-heading">The steps</h2>
+          </header>
+          <ol class="step-list fade-in">
+            <li>
+              <p>
+                Pull information from about 10 sources, including financial
+                information, PR ranking sites, and awards.
+              </p>
+            </li>
+            <li>
+              <p>
+                Compile it into structured documents, with the same fields for
+                every peer.
+              </p>
+            </li>
+            <li><p>Store the documents in a database.</p></li>
+            <li>
+              <p>
+                Use NotebookLM to read, sort, clean, and extract from the long,
+                unstructured documents.
+              </p>
+            </li>
+            <li><p>Load the cleaned material into an agent.</p></li>
+            <li>
+              <p>
+                Every week, update the database, flag anything unusual, and email
+                me a link to the update.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="ways-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">05</p>
+            <h2 id="ways-heading">Two ways to use the data</h2>
+          </header>
+          <div class="mini-grid is-two">
+            <article class="mini-card fade-in">
+              <h3>Ask NotebookLM directly</h3>
+              <p>
+                Upload everything and ask questions. It is fast and good at
+                reading very long documents, but it only answers when I ask.
+              </p>
+            </article>
+            <article class="mini-card fade-in">
+              <h3>Use the agent</h3>
+              <p>
+                It has the same material plus instructions on what to watch for.
+                It alerts me when a peer does something unusual, so I don't have
+                to ask.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section section-tint" aria-labelledby="alert-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">06</p>
+            <h2 id="alert-heading">Sample alert</h2>
+          </header>
+          <div class="detail-copy detail-intro fade-in">
+            <p class="detail-note">Fictional example. Real findings are not shown.</p>
+          </div>
+          <div class="slack-card alert-card fade-in">
+            <p class="alert-text">
+              Alert: Agency X moved up four places in a ranking since last week.
+              That is a bigger jump than its usual movement. Worth a look before
+              the next update.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="limits-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">07</p>
+            <h2 id="limits-heading">Limits</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              Public sources can be incomplete or out of date, so a person checks
+              anything important before it is used.
+            </p>
+            <p>The agent flags changes. It does not decide what they mean.</p>
+          </div>
+          <a class="back-link back-link-bottom" href="index.html#projects"
+            >← Back to projects</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>Vaidehi Patel · 2026</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

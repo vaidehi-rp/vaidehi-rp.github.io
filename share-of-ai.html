@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Share of AI: an agent that checks whether a brand has a presence problem or a perception problem in AI search."
+    />
+    <title>Share of AI | Vaidehi Patel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&family=Lora:wght@400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-shell">
+        <a href="index.html" class="logo">VP</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="siteNav"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+          <a href="index.html#work" data-nav-link>Work</a>
+          <a href="index.html#projects" data-nav-link>Projects</a>
+          <a href="index.html#process" data-nav-link>Process</a>
+          <a href="index.html#about" data-nav-link>About</a>
+          <a href="index.html#contact" data-nav-link>Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="detail-hero" aria-label="Project overview">
+        <div class="container">
+          <a class="back-link" href="index.html#projects">← Back to projects</a>
+          <p class="mono-label accent">AI Visibility · Agent</p>
+          <h1 class="detail-title">Share of AI</h1>
+          <p class="detail-subtitle">
+            An agent that checks whether a brand has a presence problem or a
+            perception problem in AI search.
+          </p>
+          <p class="detail-note">
+            Built solo in 8.5 hours at Profound's marketing engineering hackathon,
+            where I was 1 of 50 builders selected from thousands worldwide. Built
+            on Profound's agent builder.
+          </p>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="problem-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">01</p>
+            <h2 id="problem-heading">The problem</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              Most tools measure whether a brand shows up in AI answers. That's
+              presence.
+            </p>
+            <p>
+              A brand can show up often and still be described badly, and that's
+              perception.
+            </p>
+            <p>
+              The two need different fixes. A presence problem needs more content
+              AI can cite. A perception problem needs a change in how the brand is
+              described.
+            </p>
+            <p>Fixing the wrong one wastes the content budget.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section section-tint" aria-labelledby="how-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">02</p>
+            <h2 id="how-heading">How it works</h2>
+          </header>
+          <div class="process-grid">
+            <article class="process-step fade-in">
+              <span class="step-ghost">01</span>
+              <h3>Pull the data</h3>
+              <p>
+                Every week the agent pulls share of voice by topic, plus positive
+                and negative sentiment, from Profound.
+              </p>
+            </article>
+            <article class="process-step fade-in">
+              <span class="step-ghost">02</span>
+              <h3>Compare</h3>
+              <p>
+                For each topic, a script compares the brand with the strongest
+                competitor.
+              </p>
+            </article>
+            <article class="process-step fade-in">
+              <span class="step-ghost">03</span>
+              <h3>Sort</h3>
+              <p>Each topic goes into Defend, Fight, or Abandon.</p>
+            </article>
+            <article class="process-step fade-in">
+              <span class="step-ghost">04</span>
+              <h3>Report</h3>
+              <p>
+                An LLM writes the diagnosis and content briefs, and the report goes
+                to Slack and a Google Doc.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="sort-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">03</p>
+            <h2 id="sort-heading">How it sorts each topic</h2>
+          </header>
+          <div class="mini-grid">
+            <article class="mini-card fade-in">
+              <h3>Defend</h3>
+              <p>
+                The brand already leads the top competitor on this topic. Keep it
+                that way.
+              </p>
+            </article>
+            <article class="mini-card fade-in">
+              <h3>Fight</h3>
+              <p>
+                The brand trails by 5 points or less. It's winnable, so the agent
+                writes a specific content brief.
+              </p>
+            </article>
+            <article class="mini-card fade-in">
+              <h3>Abandon</h3>
+              <p>
+                The brand trails by more than that. Not worth chasing right now,
+                so the budget goes elsewhere.
+              </p>
+            </article>
+          </div>
+          <p class="detail-note detail-footnote">
+            The 5-point threshold is the default and can be adjusted.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="detail-section section-tint"
+        aria-labelledby="classify-heading"
+      >
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">04</p>
+            <h2 id="classify-heading">How it classifies the problem</h2>
+          </header>
+          <div class="detail-copy detail-intro fade-in">
+            <p>
+              Each topic also gets a problem type. A presence problem means the
+              brand trails the top competitor by more than the threshold. A
+              perception problem means more than 45% of the sentiment about the
+              brand is negative.
+            </p>
+          </div>
+          <div class="quadrant fade-in">
+            <span class="quadrant-corner" aria-hidden="true"></span>
+            <p class="mono-label quadrant-axis" aria-hidden="true">
+              Perception problem: yes
+            </p>
+            <p class="mono-label quadrant-axis" aria-hidden="true">
+              Perception problem: no
+            </p>
+
+            <p
+              class="mono-label quadrant-axis quadrant-axis-row"
+              aria-hidden="true"
+            >
+              Presence problem: yes
+            </p>
+            <article class="quadrant-card">
+              <p class="mono-label accent">Type A · Presence yes · Perception yes</p>
+              <h3>Presence and perception</h3>
+              <p>Fix how AI describes the brand first, then build content volume.</p>
+            </article>
+            <article class="quadrant-card">
+              <p class="mono-label accent">Type B · Presence yes · Perception no</p>
+              <h3>Presence only</h3>
+              <p>Create content AI can cite.</p>
+            </article>
+
+            <p
+              class="mono-label quadrant-axis quadrant-axis-row"
+              aria-hidden="true"
+            >
+              Presence problem: no
+            </p>
+            <article class="quadrant-card">
+              <p class="mono-label accent">Type C · Presence no · Perception yes</p>
+              <h3>Perception only</h3>
+              <p>Reshape how AI describes the brand.</p>
+            </article>
+            <article class="quadrant-card">
+              <p class="mono-label accent">Type D · Presence no · Perception no</p>
+              <h3>Neither</h3>
+              <p>A small optimization closes the gap. A quick win.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="agent-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">05</p>
+            <h2 id="agent-heading">The agent on Profound</h2>
+          </header>
+          <figure class="agent-figure fade-in">
+            <a
+              class="agent-scroll"
+              href="assets/share-of-ai-agent.jpeg"
+              target="_blank"
+              rel="noopener"
+              aria-label="Open the full-size screenshot of the agent"
+            >
+              <img
+                src="assets/share-of-ai-agent.jpeg"
+                alt="The Share of AI agent in Profound's workflow builder"
+                loading="lazy"
+              />
+            </a>
+            <figcaption>
+              The agent in Profound's workflow builder. It pulls the data, runs the
+              comparison, branches on whether there are winnable topics, and sends
+              the report.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="detail-section section-tint" aria-labelledby="slack-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">06</p>
+            <h2 id="slack-heading">What the Slack message looks like</h2>
+          </header>
+          <div class="detail-copy detail-intro fade-in">
+            <p>
+              Every Monday the agent sends a message like this to Slack. The brand
+              and numbers below are sample data.
+            </p>
+          </div>
+          <div class="slack-card fade-in">
+<pre class="slack-message"><strong>📊 Share of AI Report — Example Brand</strong>
+<em>Week of October 19, 2026</em>
+
+<strong>SENTIMENT HEALTH</strong>
+✅ Positive: 36% | ⚠️ Negative: 48% | Net: -0.120
+Net sentiment trails the strongest competitor by 0.08.
+━━━━━━━━━━━━━━━━━━━━━━
+<strong>⚔️ FIGHT — Winnable This Week</strong>
+- <strong>Pricing</strong> — SOV 22% vs Competitor A 25% (gap: 3pt)
+  Problem: Perception → AI describes the brand as expensive
+  Action: Publish a pricing page that answers "is it worth the cost?"
+- <strong>Integrations</strong> — SOV 18% vs Competitor B 21% (gap: 3pt)
+  Problem: Perception → AI calls the integrations limited
+  Action: Publish a comparison page with a full integrations list
+━━━━━━━━━━━━━━━━━━━━━━
+<strong>🛡️ DEFEND — You're Winning</strong>
+<strong>Onboarding</strong> • <strong>Support</strong>
+<strong>🏳️ ABANDON — Not Worth Fighting</strong>
+<strong>Enterprise security</strong> (14pt gap) • <strong>Analytics</strong> (11pt gap)
+━━━━━━━━━━━━━━━━━━━━━━
+<strong>⚡ BOTTOM LINE</strong>
+Fix how AI describes pricing before publishing more content.
+<em>Powered by Share of AI • Runs every Monday automatically</em></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="impact-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">07</p>
+            <h2 id="impact-heading">Impact</h2>
+          </header>
+          <div class="detail-callout fade-in">
+            <p>
+              Replaces about 6 hours of weekly analyst work (my estimate) with
+              about 3 minutes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section section-tint" aria-labelledby="next-heading">
+        <div class="container">
+          <header class="section-head">
+            <p class="mono-label">08</p>
+            <h2 id="next-heading">What I'd improve next</h2>
+          </header>
+          <div class="detail-copy fade-in">
+            <p>
+              Break sentiment down by topic, and weight topics by how much volume
+              they carry.
+            </p>
+          </div>
+          <a class="back-link back-link-bottom" href="index.html#projects"
+            >← Back to projects</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>Vaidehi Patel · 2026</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

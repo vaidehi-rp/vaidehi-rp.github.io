@@ -795,3 +795,231 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
     cursor: pointer;
   }
 }
+
+/* Project card link (main page) */
+.project-feature.has-link {
+  position: relative;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: color 0.25s ease;
+}
+
+.card-link:hover {
+  color: var(--accent-hover);
+}
+
+.project-feature.has-link .card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* Project detail page */
+.detail-hero {
+  padding: 7.5rem 0 2.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.25s ease;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.detail-title {
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.detail-subtitle {
+  max-width: 62ch;
+  font-size: 1.2rem !important;
+  color: var(--text) !important;
+  margin-bottom: 0.9rem;
+}
+
+.detail-note {
+  max-width: 62ch;
+  font-size: 0.92rem !important;
+  margin-bottom: 0;
+}
+
+.detail-section {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.detail-section .section-head {
+  margin-bottom: 1.4rem;
+}
+
+.detail-section .section-head h2 {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
+.detail-copy {
+  max-width: 66ch;
+}
+
+.detail-copy p {
+  margin-bottom: 0.8rem;
+}
+
+.detail-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.detail-intro {
+  margin-bottom: 1.6rem;
+}
+
+.detail-footnote {
+  margin-top: 1.4rem;
+}
+
+.back-link-bottom {
+  margin: 2.4rem 0 0;
+}
+
+.detail-section .mini-grid {
+  margin-top: 0;
+}
+
+.quadrant {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 0.8rem;
+  align-items: stretch;
+}
+
+.quadrant-axis {
+  margin: 0;
+  align-self: end;
+}
+
+.quadrant-axis-row {
+  align-self: center;
+  max-width: 7rem;
+}
+
+.quadrant-card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1.1rem;
+}
+
+.quadrant-card .mono-label {
+  margin-bottom: 0.5rem;
+  font-size: 0.66rem;
+}
+
+.quadrant-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.quadrant-card p:not(.mono-label) {
+  margin: 0;
+}
+
+.agent-figure {
+  margin: 0;
+  max-width: 760px;
+  border: 1px solid var(--border);
+  background: #f7f2e7;
+  padding: 0.65rem;
+}
+
+.agent-scroll {
+  display: block;
+  max-height: 520px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+}
+
+.agent-scroll img {
+  width: 100%;
+  display: block;
+}
+
+.agent-figure figcaption {
+  margin-top: 0.7rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.slack-card {
+  max-width: 720px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  background: #fbf8f0;
+  padding: 1.2rem 1.3rem;
+}
+
+.slack-message {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.slack-message strong {
+  font-weight: 600;
+}
+
+.slack-message em {
+  color: var(--text-secondary);
+}
+
+.detail-callout {
+  max-width: 62ch;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1.2rem 1.3rem;
+}
+
+.detail-callout p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .detail-hero {
+    padding-top: 6.5rem;
+  }
+
+  .detail-section {
+    padding: 2.4rem 0;
+  }
+
+  .quadrant {
+    grid-template-columns: 1fr;
+  }
+
+  .quadrant-axis,
+  .quadrant-corner {
+    display: none;
+  }
+}

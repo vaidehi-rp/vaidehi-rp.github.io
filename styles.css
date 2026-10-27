@@ -4,6 +4,7 @@
   --text-secondary: #5d3c64;
   --accent: #7b466a;
   --accent-hover: #5d3c64;
+  --accent-bright: #ba6e8f;
   --surface: #efe3ec;
   --border: #d9c3d2;
   --nav-bg: #f8f3f7;
@@ -278,32 +279,12 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   border: 1px solid var(--border);
 }
 
-.profile-photo-placeholder {
-  display: none;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border: 1px dashed var(--border);
-  background: var(--tint-strong);
-  color: var(--text-secondary);
-  font-family: "DM Mono", monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
 .profile-photo-card .mono-label {
   margin: 0.55rem 0 0;
 }
 
-.profile-photo-card.is-missing-photo img {
+.profile-photo-card.is-missing-photo {
   display: none;
-}
-
-.profile-photo-card.is-missing-photo .profile-photo-placeholder {
-  display: flex;
 }
 
 .stat-card {
@@ -820,8 +801,21 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   transition: color 0.25s ease;
 }
 
-.card-link:hover {
-  color: var(--accent-hover);
+.card-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
+  text-decoration-color: var(--accent-faint);
+  transition: color 0.25s ease, text-decoration-color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+.card-link:hover,
+.project-feature.has-link:hover .card-link {
+  color: var(--accent-bright);
+  text-decoration-color: var(--accent-bright);
+  text-decoration-thickness: 2px;
+  text-shadow: 0 0 14px rgba(211, 145, 176, 0.7);
 }
 
 .project-feature.has-link .card-link::after {

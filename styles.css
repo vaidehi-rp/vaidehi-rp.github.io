@@ -1,13 +1,21 @@
 :root {
-  --background: #f5f0e8;
-  --text: #1c1410;
-  --text-secondary: #5c4a3a;
-  --accent: #c4622d;
-  --accent-hover: #a8501f;
-  --surface: #ede6d6;
-  --border: #d4c9b5;
-  --nav-bg: #f5f0e8;
-  --tint: rgba(196, 98, 45, 0.05);
+  --background: #eef3f9;
+  --text: #1e2a3b;
+  --text-secondary: #56657a;
+  --accent: #4f74ad;
+  --accent-hover: #3d5f94;
+  --surface: #e3ebf5;
+  --border: #c9d6e6;
+  --nav-bg: #eef3f9;
+  --tint: rgba(133, 118, 204, 0.07);
+  --tint-strong: rgba(79, 116, 173, 0.1);
+  --accent-faint: rgba(79, 116, 173, 0.4);
+  --card: #f4f8fc;
+  --card-light: #f9fbfe;
+  --muted: #dfe6ee;
+  --muted-border: #c3cfdc;
+  --on-accent: #ffffff;
+  --shadow: rgba(30, 42, 59, 0.08);
 }
 
 *,
@@ -227,7 +235,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 
 .button-solid {
   background: var(--accent);
-  color: #fffaf4;
+  color: var(--on-accent);
 }
 
 .button-solid:hover {
@@ -255,9 +263,9 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 .profile-photo-card {
   margin: 0;
   border: 1px solid var(--border);
-  background: #f7f2e8;
+  background: var(--card);
   padding: 0.65rem;
-  box-shadow: 0 14px 30px rgba(28, 20, 16, 0.08);
+  box-shadow: 0 14px 30px var(--shadow);
 }
 
 .profile-photo-card img {
@@ -275,7 +283,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   width: 100%;
   aspect-ratio: 4 / 5;
   border: 1px dashed var(--border);
-  background: rgba(196, 98, 45, 0.08);
+  background: var(--tint-strong);
   color: var(--text-secondary);
   font-family: "DM Mono", monospace;
   font-size: 0.72rem;
@@ -342,7 +350,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 
 .education-strip {
   border: 1px solid var(--border);
-  background: rgba(255, 252, 246, 0.4);
+  background: rgba(255, 255, 255, 0.4);
   padding: 1.1rem 1.2rem;
   margin-bottom: 1.1rem;
   display: grid;
@@ -412,7 +420,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 
 .tag-list li {
   border: 1px solid var(--border);
-  background: rgba(245, 240, 232, 0.72);
+  background: rgba(249, 251, 254, 0.72);
   padding: 0.22rem 0.52rem;
   font-family: "DM Mono", monospace;
   font-size: 0.67rem;
@@ -450,7 +458,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 
 .project-feature {
   border: 1px solid var(--border);
-  background: #f7f2e7;
+  background: var(--card);
   padding: 1.4rem;
   transition: all 0.25s ease;
 }
@@ -476,7 +484,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 }
 
 .dark-list li {
-  background: rgba(245, 240, 232, 0.82);
+  background: rgba(249, 251, 254, 0.82);
 }
 
 .mini-grid {
@@ -488,7 +496,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 
 .mini-card {
   border: 1px solid var(--border);
-  background: #fbf8f0;
+  background: var(--card-light);
   padding: 1.1rem;
   transition: all 0.25s ease;
 }
@@ -525,7 +533,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 }
 
 .process-step + .process-step {
-  border-left: 1px solid rgba(196, 98, 45, 0.4);
+  border-left: 1px solid var(--accent-faint);
   padding-left: 1rem;
 }
 
@@ -590,7 +598,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 .education-callout {
   margin-top: 1.4rem;
   border: 1px solid var(--border);
-  background: rgba(245, 240, 232, 0.45);
+  background: rgba(249, 251, 254, 0.45);
   padding: 1rem;
   font-family: "DM Mono", monospace;
   font-size: 0.72rem;
@@ -655,10 +663,10 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   z-index: 120;
   min-width: 180px;
   border: 1px solid var(--accent);
-  background: rgba(28, 20, 16, 0.95);
+  background: rgba(30, 42, 59, 0.95);
   color: var(--background);
   padding: 0.7rem 0.8rem;
-  box-shadow: 0 10px 22px rgba(28, 20, 16, 0.28);
+  box-shadow: 0 10px 22px rgba(30, 42, 59, 0.28);
 }
 
 .owner-label {
@@ -667,7 +675,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.64rem;
-  color: #f5d9c8;
+  color: #c9d9ef;
 }
 
 .owner-count {
@@ -678,7 +686,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 }
 
 .owner-count span {
-  color: #ffd5be;
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -688,7 +696,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.6rem;
-  color: #e8b99f;
+  color: #a9c0de;
 }
 
 @media (max-width: 1080px) {
@@ -773,7 +781,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 
   .process-step + .process-step {
     border-left: 0;
-    border-top: 1px solid rgba(196, 98, 45, 0.4);
+    border-top: 1px solid var(--accent-faint);
     padding-left: 0;
     padding-top: 1.1rem;
   }
@@ -944,7 +952,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   margin: 0;
   max-width: 760px;
   border: 1px solid var(--border);
-  background: #f7f2e7;
+  background: var(--card);
   padding: 0.65rem;
 }
 
@@ -972,7 +980,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   max-width: 720px;
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
-  background: #fbf8f0;
+  background: var(--card-light);
   padding: 1.2rem 1.3rem;
 }
 
@@ -1085,7 +1093,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 .persona-card {
   max-width: 560px;
   border: 1px solid var(--border);
-  background: #fbf8f0;
+  background: var(--card-light);
   padding: 1.3rem 1.4rem;
 }
 
@@ -1136,7 +1144,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 .persona-gallery figure {
   margin: 0;
   border: 1px solid var(--border);
-  background: #f7f2e7;
+  background: var(--card);
   padding: 0.5rem;
 }
 
@@ -1177,7 +1185,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 }
 
 .chat-message.from-agent {
-  background: #fbf8f0;
+  background: var(--card-light);
   border-left: 3px solid var(--accent);
   justify-self: start;
 }
@@ -1246,8 +1254,8 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 }
 
 .flow-row.is-manual .flow-box {
-  background: #e6e0d5;
-  border-color: #cfc5b2;
+  background: var(--muted);
+  border-color: var(--muted-border);
 }
 
 .flow-row.is-manual .flow-title {
@@ -1305,8 +1313,8 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 }
 
 .flow-bar {
-  border: 1px solid #cfc5b2;
-  background: #e6e0d5;
+  border: 1px solid var(--muted-border);
+  background: var(--muted);
   padding: 1rem 1.2rem;
   text-align: center;
 }
@@ -1361,8 +1369,8 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 }
 
 .flow-swatch.is-manual {
-  background: #e6e0d5;
-  border-color: #cfc5b2;
+  background: var(--muted);
+  border-color: var(--muted-border);
 }
 
 /* Per-box flow colors (mixed rows) */
@@ -1376,8 +1384,8 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 }
 
 .flow-box.is-manual {
-  background: #e6e0d5;
-  border-color: #cfc5b2;
+  background: var(--muted);
+  border-color: var(--muted-border);
 }
 
 .flow-box.is-manual .flow-title {

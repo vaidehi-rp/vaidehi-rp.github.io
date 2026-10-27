@@ -1,21 +1,21 @@
 :root {
-  --background: #eef3f9;
-  --text: #1e2a3b;
-  --text-secondary: #56657a;
-  --accent: #4f74ad;
-  --accent-hover: #3d5f94;
-  --surface: #e3ebf5;
-  --border: #c9d6e6;
-  --nav-bg: #eef3f9;
-  --tint: rgba(133, 118, 204, 0.07);
-  --tint-strong: rgba(79, 116, 173, 0.1);
-  --accent-faint: rgba(79, 116, 173, 0.4);
-  --card: #f4f8fc;
-  --card-light: #f9fbfe;
-  --muted: #dfe6ee;
-  --muted-border: #c3cfdc;
+  --background: #f8f3f7;
+  --text: #0c0420;
+  --text-secondary: #5d3c64;
+  --accent: #7b466a;
+  --accent-hover: #5d3c64;
+  --surface: #efe3ec;
+  --border: #d9c3d2;
+  --nav-bg: #f8f3f7;
+  --tint: rgba(211, 145, 176, 0.14);
+  --tint-strong: rgba(159, 100, 150, 0.14);
+  --accent-faint: rgba(123, 70, 106, 0.4);
+  --card: #fbf7fa;
+  --card-light: #fdfbfc;
+  --muted: #e9dde6;
+  --muted-border: #d1bccb;
   --on-accent: #ffffff;
-  --shadow: rgba(30, 42, 59, 0.08);
+  --shadow: rgba(12, 4, 32, 0.1);
 }
 
 *,
@@ -420,7 +420,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 
 .tag-list li {
   border: 1px solid var(--border);
-  background: rgba(249, 251, 254, 0.72);
+  background: rgba(253, 251, 252, 0.72);
   padding: 0.22rem 0.52rem;
   font-family: "DM Mono", monospace;
   font-size: 0.67rem;
@@ -484,7 +484,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 }
 
 .dark-list li {
-  background: rgba(249, 251, 254, 0.82);
+  background: rgba(253, 251, 252, 0.82);
 }
 
 .mini-grid {
@@ -598,7 +598,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
 .education-callout {
   margin-top: 1.4rem;
   border: 1px solid var(--border);
-  background: rgba(249, 251, 254, 0.45);
+  background: rgba(253, 251, 252, 0.45);
   padding: 1rem;
   font-family: "DM Mono", monospace;
   font-size: 0.72rem;
@@ -663,10 +663,10 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   z-index: 120;
   min-width: 180px;
   border: 1px solid var(--accent);
-  background: rgba(30, 42, 59, 0.95);
+  background: rgba(12, 4, 32, 0.95);
   color: var(--background);
   padding: 0.7rem 0.8rem;
-  box-shadow: 0 10px 22px rgba(30, 42, 59, 0.28);
+  box-shadow: 0 10px 22px rgba(12, 4, 32, 0.28);
 }
 
 .owner-label {
@@ -675,7 +675,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.64rem;
-  color: #c9d9ef;
+  color: #d391b0;
 }
 
 .owner-count {
@@ -696,7 +696,7 @@ main p:not(.mono-label):not(.stat-number):not(.stat-label):not(.meta):not(.gpa-v
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.6rem;
-  color: #a9c0de;
+  color: #ba6e8f;
 }
 
 @media (max-width: 1080px) {

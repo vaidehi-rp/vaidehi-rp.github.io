@@ -5,7 +5,7 @@ Each card looks for `assets/logos/<slug>.png` (square, 128px or larger works bes
 - `launchsquad.png`
 - `weber-shandwick.png`
 - `trax-retail.png`
-- `kahana.png` (missing, shows "K" until uploaded)
+- `kahana.png`
 - `carl-zeiss.png`
 - `digital-anatomics.png`
 - `johns-hopkins.png`

@@ -121,6 +121,23 @@ const updateVisitCounter = async () => {
 
 updateVisitCounter();
 
+document.querySelectorAll("[data-logo] img").forEach((logo) => {
+  const tile = logo.closest("[data-logo]");
+  const markMissing = () => tile.classList.add("is-missing-logo");
+  const markLoaded = () => tile.classList.remove("is-missing-logo");
+
+  logo.addEventListener("error", markMissing);
+  logo.addEventListener("load", markLoaded);
+
+  if (logo.complete) {
+    if (logo.naturalWidth > 0) {
+      markLoaded();
+    } else {
+      markMissing();
+    }
+  }
+});
+
 const personaGallery = document.getElementById("personaGallery");
 
 if (personaGallery && personaGallery.dataset.manifest) {
